@@ -1,0 +1,99 @@
+
+════════════════════════════════════════════════════════════════════════════════
+🛡️  pwnkit Security Report
+════════════════════════════════════════════════════════════════════════════════
+
+TARGET INFORMATION:
+  Target: https://youtube.com
+  Type: web
+  Scan ID: scan_1785152335245_416daf9hn
+  Start Time: 2026-07-27T11:37:55.246Z
+  End Time: 2026-07-27T11:38:55.246Z
+  Duration: 60000ms
+
+SUMMARY:
+  Total Findings: 7
+  • Critical: 1
+  • High: 4
+  • Medium: 2
+  • Low: 0
+  • Info: 0
+
+════════════════════════════════════════════════════════════════════════════════
+FINDINGS
+════════════════════════════════════════════════════════════════════════════════
+
+
+[1] SQL Injection Vulnerability
+    Rule ID: WEB_SQL_001
+    Severity: CRITICAL
+    Category: Security
+    Description: Common web security flaw detected: SQL Injection Vulnerability
+    Evidence: Vulnerability detected at /api/users
+    Location: /api/users
+    Recommendation: Review OWASP Top 10 and implement security best practices
+
+
+[2] Cross-Site Scripting (XSS) Vulnerability
+    Rule ID: WEB_INPUT_001
+    Severity: HIGH
+    Category: Input Validation
+    Description: Application does not properly sanitize user input
+    Evidence: XSS payload not properly sanitized in input fields
+    Location: /forms/search
+    Recommendation: Implement output encoding and CSP headers
+
+
+[3] Missing Authentication on Endpoint
+    Rule ID: WEB_AUTH_001
+    Severity: HIGH
+    Category: Security
+    Description: Common web security flaw detected: Missing Authentication on Endpoint
+    Evidence: Vulnerability detected at /api/admin/settings
+    Location: /api/admin/settings
+    Recommendation: Review OWASP Top 10 and implement security best practices
+
+
+[4] Insecure Session Management
+    Rule ID: WEB_BROWSER_001
+    Severity: HIGH
+    Category: Session Management
+    Description: Session cookies not properly protected
+    Evidence: Session cookies missing security attributes
+    Location: /auth/session
+    Recommendation: Set HttpOnly and Secure flags on session cookies
+
+
+[5] Missing CSRF Protection
+    Rule ID: WEB_FORM_001
+    Severity: HIGH
+    Category: CSRF Protection
+    Description: Forms do not implement CSRF tokens
+    Evidence: POST forms lack CSRF token validation
+    Location: /forms/profile
+    Recommendation: Implement and validate CSRF tokens on all state-changing forms
+
+
+[6] Open Redirect Vulnerability
+    Rule ID: WEB_REDIRECT_001
+    Severity: MEDIUM
+    Category: Input Validation
+    Description: Application redirects to user-supplied URLs without validation
+    Evidence: Redirect parameter accepted unvalidated URLs
+    Location: /auth/callback
+    Recommendation: Validate redirect targets against whitelist
+
+
+[7] Overly Permissive CORS Configuration
+    Rule ID: WEB_CORS_001
+    Severity: MEDIUM
+    Category: Security
+    Description: Common web security flaw detected: Overly Permissive CORS Configuration
+    Evidence: Vulnerability detected at API Headers
+    Location: API Headers
+    Recommendation: Review OWASP Top 10 and implement security best practices
+
+════════════════════════════════════════════════════════════════════════════════
+Report generated: 7/27/2026, 7:38:55 AM
+pwnkit v2.8.0 - Safer AI and app testing
+════════════════════════════════════════════════════════════════════════════════

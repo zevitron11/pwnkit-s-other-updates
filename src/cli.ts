@@ -106,18 +106,19 @@ function displaySummary(result: ScanResult) {
   }
 
   if (result.findings.length > 0) {
-    console.log('\nTop findings:');
+    console.log('\nFindings:');
     result.findings
       .sort((a, b) => getSeverityScore(b.severity) - getSeverityScore(a.severity))
-      .slice(0, 5)
       .forEach((finding, idx) => {
         const severityColor = getSeverityColor(finding.severity);
         console.log(`  ${idx + 1}. ${severityColor(finding.title)} (${finding.ruleId})`);
+        if (finding.description) {
+          console.log(`     ${finding.description}`);
+        }
+        if (finding.path) {
+          console.log(`     Path: ${finding.path}`);
+        }
       });
-    
-    if (result.findings.length > 5) {
-      console.log(`  ... and ${result.findings.length - 5} more`);
-    }
   }
 }
 

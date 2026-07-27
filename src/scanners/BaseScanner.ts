@@ -1,5 +1,4 @@
-import { v4 as uuidv4 } from 'crypto';
-import { Finding, ScanOptions, ScanResult, SeverityLevel, TargetType } from './types';
+import { Finding, ScanOptions, ScanResult, SeverityLevel, TargetType } from '../types';
 
 export abstract class BaseScanner {
   protected scanId: string;
