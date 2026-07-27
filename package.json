@@ -1,0 +1,38 @@
+{
+  "name": "pwnkit",
+  "version": "2.8.0",
+  "description": "Safer AI and app testing - Security testing tool for AI systems, web apps, code, and packages",
+  "main": "dist/index.js",
+  "bin": {
+    "pwnkit": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/cli.js",
+    "test": "jest",
+    "scan": "node dist/cli.js scan"
+  },
+  "keywords": [
+    "security",
+    "testing",
+    "pentesting",
+    "ai",
+    "web",
+    "code",
+    "package",
+    "vulnerability"
+  ],
+  "author": "pwnkit",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "chalk": "^5.3.0",
+    "commander": "^11.0.0",
+    "playwright": "^1.40.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.2.0"
+  }
+}
